@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.level3 {
+			background-image: url(bg3.jpg);
+			background-size: 100% 100%;
+			height: 658px;
+			width: 1256px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.mark {
+			width: 100px;
+			position: absolute;
+		}
+		.created_point {
+			color: green;
+			font-family: COMIC SANS MS;
+		}
+		.hide_point {
+			color: red;
+			font-family: COMIC SANS MS;
+		}
+		.coll {
+			font-family: COMIC SANS MS;
+		}
+	</style>
+</head>
+<body>
+	<div class="level3">
+		<div class="row ml-3">
+			<h2 class="coll">Количество вупсеней:</h2><h2 class="created_point"> </h2>
+		</div>
+		<div class="row ml-3">
+			<h2 class="coll">Количество пойманных вупсеней:</h2><h2 class="hide_point"> </h2>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let created = document.querySelector('.created_point');
+		let hide = document.querySelector('.hide_point');
+		let getRandom = function(arg){
+            let rand = Math.random() * arg;
+            let round = Math.round(rand);
+            return round;
+        }
+        let ccreated = 0;
+        let hhide = 0;
+        let createPoint = function(){
+            let elem = document.createElement("img");
+            document.body.appendChild(elem);
+            elem.classList.add("mark");
+            elem.src = "vupsen.jpg";
+            elem.style.top = getRandom(658) + "px";
+            elem.style.left = getRandom(1256) + "px";
+            ccreated = ccreated + 1;
+            created.innerHTML = ccreated;
+            elem.onclick = function(){
+                elem.style.display = "none";
+                hhide = hhide + 1;
+                hide.innerHTML = hhide;
+            }
+        }
+		let check = function(){
+			if(hhide < 5) {
+				alert('Ты проиграл, попробуй еще!');
+				window.location.reload(true);
+			} 
+			if(hhide > 4) {
+				alert('Молодец! Ты выиграл! Иди на level №2');
+				location="index.html";
+			} 
+		}
+		setTimeout(check, 10000)
+        setInterval(createPoint ,1000);
+    </script>
+</body>
+</html>

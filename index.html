@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лунтиляндия</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.level1 {
+			background-image: url(bg.jpg);
+			background-size: 100% 100%;
+			height: 658px;
+			width: 1256px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.level2 {
+			background-image: url(bg2.webp);
+			background-size: 100% 100%;
+			height: 658px;
+			width: 1256px;
+			margin-left: auto;
+			margin-right: auto;
+			display: none;
+		}
+		.welcome {
+			font-family: COMIC SANS MS;
+			font-size: 40px;
+			left: 500px;
+			top: 200px;
+			position: absolute;
+		}
+		.welcome2 {
+			font-family: COMIC SANS MS;
+			font-size: 40px;
+			left: 575px;
+			top: 250px;
+			position: absolute;
+		}
+		.btn {
+			left: 630px;
+			top: 310px;
+			position: absolute;
+		}
+		.level3 {
+			width: 130px;
+			height: 60px;
+			margin-left: auto;
+			margin-right: auto;
+			top: 250px; 
+			left: 610px;
+			position: absolute;
+			background-image: url(ABHN2285.png);
+			background-size: 100% 100%;
+		}
+		.level4 {
+			width: 130px;
+			height: 60px;
+			margin-left: auto;
+			margin-right: auto;
+			top: 315px; 
+			left: 610px;
+			position: absolute;
+			background-image: url(ABHN2285.png);
+			background-size: 100% 100%;
+		}
+		.level5 {
+			width: 130px;
+			height: 60px;
+			margin-left: auto;
+			margin-right: auto;
+			top: 380px; 
+			left: 610px;
+			position: absolute;
+			background-image: url(ABHN2285.png);
+			background-size: 100% 100%;
+		}
+		.btnn {
+			width: 100px;
+			height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="level1">
+		<h2 class="text-dark welcome">Добро пожаловать</h2>
+		<h2 class="text-info welcome2">На Землю!</h2>
+		<button class="btn btnn bg-dark text-info" style="font-family: COMIC SANS MS;">Play!</button>
+	</div>
+	<div class="level2">
+		<div class="level3">
+			<a href="level3.html" style="width: 70px; position: absolute; left: 30px; top: 17px; font-family: COMIC SANS MS; color: white;">Level №1</a>
+		</div>
+		<div class="level4 bg-light rounded-pill">
+			<a href="level4.html" style="width: 75px; position: absolute; left: 30px; top: 17px; font-family: COMIC SANS MS; color: white;">Level №2</a>
+		</div>
+		<div class="level5 bg-light rounded-pill">
+			<a href="level5.html" style="width: 75px; position: absolute; left: 30px; top: 17px; font-family: COMIC SANS MS; color: white;">Level №3</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let level1 = document.querySelector('.level1');
+		let level2 = document.querySelector('.level2');
+		let level3 = document.querySelector('.level3');
+		let btn = document.querySelector('.btn');
+		btn.onclick = function(){
+			level1.style.display = 'none';
+			level2.style.display = 'block';
+		};
+	</script>
+</body>
+</html>
